@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function delay(){
+            alert("fetching user data...")
+            return "delay completed!"
+        }
+        console.log("start....")
+        console.log(delay())
+        console.log("this message is blocked until delay is complete.")
+        function delayNonBlocking(callback){
+            setTimeout(()=>{
+                callback("non-blocking message")
+            },2000)
+        } 
+        console.log("start non-blocking...")
+        delayNonBlocking((message)=>{
+            console.log(message)
+        })
+        console.log("this message is not blocked and runs imediately.")
+    </script>
+</body>
+</html>
